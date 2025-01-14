@@ -10,6 +10,8 @@
 
 - Before diving into each kata, take some time to read the articles and understand the design pattern being covered.
 
+- The article resides in the design pattern root folder, eg. `DesignPatterns/AppleStoreVisitor/README.md`
+
 ## Instructions: Article code
 
 - In each design pattern folder, the example code from its article is included with corresponding tests, eg. `DesignPatterns/AppleStoreVisitor/Sources/VisitorArticleCode.swift` and `DesignPatterns/AppleStoreVisitor/Tests/VisitorArticleCodeTests.swift`
