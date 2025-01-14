@@ -22,7 +22,7 @@
 
 ```shell
 cd DesignPatterns/AppleStoreVisitor
-swift test --filter ArticleCode
+swift test --filter ArticleCodeTests
 ```
 
 ## Instructions: Kata
@@ -32,7 +32,7 @@ swift test --filter ArticleCode
 - These will include failing tests. To run them:
 
 ```shell
-swift test --filter Kata
+swift test --filter KataTests
 ```
 
 - To complete each kata, refer to the markdown file containing the challenges in the design pattern root directory, eg. `DesignPatterns/AppleStoreVisitor/VisitorKata.md`
