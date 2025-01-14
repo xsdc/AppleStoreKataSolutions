@@ -7,28 +7,28 @@ extension Kata {
         let macBookPro = Mocks.macBookPro
         let visionPro = Mocks.visionPro
 
-        // Write test for sales tax visitor with a rate of 10%
-        
+        // Write the test for your sales tax visitor with a rate of 10%
+
         let macBookSalesTax = macBookPro.price * 0.0
         let visionProSalesTax = visionPro.price * 0.0
-        
+
         #expect(macBookSalesTax == 250.00)
         #expect(visionProSalesTax == 350.00)
     }
-    
+
     @Test func testSalesTaxVisitorWith15Percent() {
         let macBookPro = Mocks.macBookPro
         let visionPro = Mocks.visionPro
 
-        // Write test for sales tax visitor with a rate of 15%
-        
+        // Write the test for your sales tax visitor with a rate of 15%
+
         let macBookSalesTax = macBookPro.price * 0.0
         let visionProSalesTax = visionPro.price * 0.0
-        
+
         #expect(macBookSalesTax == 375.00)
         #expect(visionProSalesTax == 525.00)
     }
-    
+
     @Test func testEducationDiscountVisitor() {
         let macBookPro = Mocks.macBookPro
         let visionPro = Mocks.visionPro
@@ -64,7 +64,7 @@ extension Kata {
         #expect(macBookDescription == "Product with ID MBP2023 costs $2500.0")
         #expect(visionProDescription == "Product with ID VP2023 costs $3500.0")
     }
-    
+
     struct Mocks {
         static let macBookPro = MacBookProProduct(id: "MBP2023", price: 2500.00)
         static let visionPro = VisionProProduct(id: "VP2023", price: 3500.00)
