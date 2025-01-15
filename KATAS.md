@@ -1,6 +1,6 @@
 # Apple Store: Design Pattern Katas
 
-### Overview
+## Overview
 
 - This collection of katas is designed to help you understand and apply classic design patterns within the context of the Apple Store domain.
 
@@ -12,7 +12,7 @@
 
 - The article resides in the design pattern root folder, eg. `DesignPatterns/AppleStoreVisitor/README.md`
 
-## Instructions: Article code
+## Article code
 
 - In each design pattern folder, the example code from its article is included with corresponding tests, eg. `DesignPatterns/AppleStoreVisitor/Sources/VisitorArticleCode.swift` and `DesignPatterns/AppleStoreVisitor/Tests/VisitorArticleCodeTests.swift`
 
@@ -25,7 +25,7 @@ cd DesignPatterns/AppleStoreVisitor
 swift test --filter ArticleCodeTests
 ```
 
-## Instructions: Kata
+## Kata
 
 - Alongside the article code is the kata source and test files, eg. `DesignPatterns/AppleStoreVisitor/Sources/VisitorKata.swift` and `DesignPatterns/AppleStoreVisitor/Tests/VisitorKataTests.swift`
 
@@ -37,4 +37,4 @@ swift test --filter KataTests
 
 - To complete each kata, refer to the markdown file containing the challenges in the design pattern root directory, eg. `DesignPatterns/AppleStoreVisitor/VisitorKata.md`
 
-- These will contain challenges that are needed to be completed.
+- These will contain challenges that need to be completed.
