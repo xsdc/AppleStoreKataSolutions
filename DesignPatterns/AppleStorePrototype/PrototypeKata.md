@@ -27,7 +27,7 @@ func cloneWithConversionRate(of conversionRate: Double, toCurrency currencyCode:
 
 ### Task 2
 
-- Add a new concrete prototype for `CloneableProductConfiguration` for the Apple 4K: `AppleTVProductConfiguration`
+- Add a new concrete prototype of `CloneableProductConfiguration` for the Apple 4K: `AppleTVProductConfiguration`
 
 - `AppleTVProductConfiguration` should have a single property: `networkingOptions` of type `[ConfigurationOption]`
 
