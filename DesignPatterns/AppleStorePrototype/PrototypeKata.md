@@ -37,7 +37,9 @@ File: `Tests/PrototypeKataTests.swift`
 
 ## Task 1
 
-Update the `testPhoneCloningPhoneEuroConfigurationFromDollarConfiguration` test to include the currency code.
+Test method: `testPhoneCloningPhoneEuroConfigurationFromDollarConfiguration()`
+
+- Update the test to include the currency code.
 
 Run the test with:
 
@@ -45,16 +47,16 @@ Run the test with:
 swift test --filter AppleStorePrototype.Kata/testPhoneCloningPhoneEuroConfigurationFromDollarConfiguration
 ```
 
-### Task 2
+## Task 2
 
-Update `tvConfigurationOptions` according to the following:
+Test method: `testTVCloningYenConfigurationFromDollarConfiguration()`
+
+- Update `tvConfigurationOptions` according to the following:
 
 Option 1 - Name: "WiFi", Price: 129.00, Currency: "USD"
 Option 2 - Name: "WiFi with Ethernet", Price: 149.00, Currency: "USD"
 
-## Task 2
-
-Complete the `testTVCloningYenConfigurationFromDollarConfiguration` test.
+- Complete the `testTVCloningYenConfigurationFromDollarConfiguration` test.
 
 - The conversion rate should be 160 yen per dollar
 
