@@ -2,7 +2,7 @@ import Testing
 
 @testable import AppleStoreVisitor
 
-extension Kata {
+extension KataSolution {
     struct Mocks {
         static let macBookPro = MacBookProProduct(id: "MBP2023", price: 2500.00)
         static let visionPro = VisionProProduct(id: "VP2023", price: 3500.00)
@@ -12,25 +12,23 @@ extension Kata {
         let macBookPro = Mocks.macBookPro
         let visionPro = Mocks.visionPro
 
-        // Write the test for your sales tax visitor with a rate of 10%
+        let salesTaxVisitor = SalesTaxVisitor(salesTax: 0.10)
+        let macBookProSalesTax = macBookPro.accept(salesTaxVisitor)
+        let visionProSalesTax = visionPro.accept(salesTaxVisitor)
 
-        let macBookSalesTax = macBookPro.price * 0.0
-        let visionProSalesTax = visionPro.price * 0.0
-
-        #expect(macBookSalesTax == 250.00)
+        #expect(macBookProSalesTax == 250.00)
         #expect(visionProSalesTax == 350.00)
     }
-
+    
     @Test func testSalesTaxVisitorWith15Percent() {
         let macBookPro = Mocks.macBookPro
         let visionPro = Mocks.visionPro
 
-        // Write the test for your sales tax visitor with a rate of 15%
+        let salesTaxVisitor = SalesTaxVisitor(salesTax: 0.15)
+        let macBookProSalesTax = macBookPro.accept(salesTaxVisitor)
+        let visionProSalesTax = visionPro.accept(salesTaxVisitor)
 
-        let macBookSalesTax = macBookPro.price * 0.0
-        let visionProSalesTax = visionPro.price * 0.0
-
-        #expect(macBookSalesTax == 375.00)
+        #expect(macBookProSalesTax == 375.00)
         #expect(visionProSalesTax == 525.00)
     }
     
@@ -38,10 +36,9 @@ extension Kata {
         let macBookPro = Mocks.macBookPro
         let visionPro = Mocks.visionPro
         
-        // Write the test for your async stock check visitor
-        
-        let macBookProIsInStock: Result<Bool, Error> = .success(true)
-        let visionProIsInStock: Result<Bool, Error> = .success(true)
+        let stockCheckVisitor = StockCheckVisitor(storeCode: "ABC")
+        let macBookProIsInStock = await macBookPro.accept(stockCheckVisitor)
+        let visionProIsInStock = await visionPro.accept(stockCheckVisitor)
         
         switch macBookProIsInStock {
         case .success(let isInStock):
@@ -57,7 +54,7 @@ extension Kata {
             Issue.record("Vision Pro stock check test failed")
         }
     }
-
+    
     @Test func testEducationDiscountVisitor() {
         let macBookPro = Mocks.macBookPro
         let visionPro = Mocks.visionPro

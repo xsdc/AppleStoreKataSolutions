@@ -2,34 +2,10 @@ import Testing
 
 @testable import AppleStoreVisitor
 
-extension KataSolution {
+extension Article {
     struct Mocks {
         static let macBookPro = MacBookProProduct(id: "MBP2023", price: 2500.00)
         static let visionPro = VisionProProduct(id: "VP2023", price: 3500.00)
-    }
-    
-    @Test func testSalesTaxVisitorWith10Percent() {
-        let macBookPro = Mocks.macBookPro
-        let visionPro = Mocks.visionPro
-
-        let salesTaxVisitor = SalesTaxVisitor(salesTax: 0.10)
-        let macBookSalesTax = macBookPro.accept(salesTaxVisitor)
-        let visionProSalesTax = visionPro.accept(salesTaxVisitor)
-
-        #expect(macBookSalesTax == 250.00)
-        #expect(visionProSalesTax == 350.00)
-    }
-    
-    @Test func testSalesTaxVisitorWith15Percent() {
-        let macBookPro = Mocks.macBookPro
-        let visionPro = Mocks.visionPro
-
-        let salesTaxVisitor = SalesTaxVisitor(salesTax: 0.15)
-        let macBookSalesTax = macBookPro.accept(salesTaxVisitor)
-        let visionProSalesTax = visionPro.accept(salesTaxVisitor)
-
-        #expect(macBookSalesTax == 375.00)
-        #expect(visionProSalesTax == 525.00)
     }
     
     @Test func testEducationDiscountVisitor() {

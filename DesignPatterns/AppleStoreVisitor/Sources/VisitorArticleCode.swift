@@ -1,5 +1,5 @@
 
-struct ArticleCode {
+struct Article {
 
     // Visitor
 

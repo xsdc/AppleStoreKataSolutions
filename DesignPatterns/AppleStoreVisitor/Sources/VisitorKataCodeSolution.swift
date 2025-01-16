@@ -1,4 +1,4 @@
-struct Kata {
+struct KataSolution {
 
     // Visitor
 
@@ -6,12 +6,13 @@ struct Kata {
         associatedtype VisitorResult
         func visit(_ product: Product) -> VisitorResult
     }
+    
+    protocol AsyncVisitor {
+        associatedtype VisitorResult
+        func visit(_ product: Product) async -> VisitorResult
+    }
 
     // Concrete Visitor
-
-    class SalesTaxVisitor {
-        // Kata
-    }
 
     class EducationDiscountVisitor: Visitor {
         typealias VisitorResult = Double
@@ -39,6 +40,32 @@ struct Kata {
         }
     }
 
+    class SalesTaxVisitor: Visitor {
+        typealias VisitorResult = Double
+        private var salesTax: Double
+
+        init(salesTax: Double) {
+            self.salesTax = salesTax
+        }
+
+        func visit(_ product: Product) -> Double {
+            product.price * salesTax
+        }
+    }
+    
+    class StockCheckVisitor: AsyncVisitor {
+        typealias VisitorResult = Result<Bool, Error>
+        private let storeCode: String
+        
+        init(storeCode: String) {
+            self.storeCode = storeCode
+        }
+        
+        func visit(_ product: Product) async -> Result<Bool, Error> {
+            return .success(false)
+        }
+    }
+
     // Element
 
     protocol Product {
@@ -48,6 +75,7 @@ struct Kata {
 
     protocol VisitorAccepting {
         func accept<V: Visitor>(_ visitor: V) -> V.VisitorResult
+        func accept<V: AsyncVisitor>(_ visitor: V) async -> V.VisitorResult
     }
 
     // Concrete Element
@@ -64,6 +92,10 @@ struct Kata {
         func accept<V: Visitor>(_ visitor: V) -> V.VisitorResult {
             visitor.visit(self)
         }
+        
+        func accept<V: AsyncVisitor>(_ visitor: V) async -> V.VisitorResult {
+            await visitor.visit(self)
+        }
     }
 
     struct VisionProProduct: Product, VisitorAccepting {
@@ -77,6 +109,10 @@ struct Kata {
 
         func accept<V: Visitor>(_ visitor: V) -> V.VisitorResult {
             visitor.visit(self)
+        }
+        
+        func accept<V: AsyncVisitor>(_ visitor: V) async -> V.VisitorResult {
+            await visitor.visit(self)
         }
     }
 }

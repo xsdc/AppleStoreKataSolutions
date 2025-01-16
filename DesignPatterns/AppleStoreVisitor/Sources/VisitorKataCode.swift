@@ -1,4 +1,4 @@
-struct KataSolution {
+struct Kata {
 
     // Visitor
 
@@ -8,6 +8,10 @@ struct KataSolution {
     }
 
     // Concrete Visitor
+
+    class SalesTaxVisitor {
+        // Kata
+    }
 
     class EducationDiscountVisitor: Visitor {
         typealias VisitorResult = Double
@@ -35,19 +39,6 @@ struct KataSolution {
         }
     }
 
-    class SalesTaxVisitor: Visitor {
-        typealias VisitorResult = Double
-        private var salesTax: Double
-
-        init(salesTax: Double) {
-            self.salesTax = salesTax
-        }
-
-        func visit(_ product: Product) -> Double {
-            product.price * salesTax
-        }
-    }
-
     // Element
 
     protocol Product {
@@ -57,6 +48,11 @@ struct KataSolution {
 
     protocol VisitorAccepting {
         func accept<V: Visitor>(_ visitor: V) -> V.VisitorResult
+    }
+    
+    protocol AsyncVisitorAccepting {
+        associatedtype VisitorResult
+        func visit(_ product: Product) async -> VisitorResult
     }
 
     // Concrete Element
