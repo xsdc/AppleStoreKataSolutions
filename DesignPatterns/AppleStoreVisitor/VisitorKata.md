@@ -43,7 +43,7 @@ File: `Tests/VisitorKataTests.swift`
 
 ### Task 1
 
-- Test method: `testSalesTaxVisitorWith10Percent()`
+Test method: `testSalesTaxVisitorWith10Percent()`
 
 - Test the sales tax visitor with a rate of 10%.
 
@@ -57,7 +57,7 @@ swift test --filter AppleStoreVisitor.Kata/testSalesTaxVisitorWith10Percent
 
 ### Task 2
 
-- Test method: `testSalesTaxVisitorWith15Percent()`
+Test method: `testSalesTaxVisitorWith15Percent()`
 
 - Test the sales tax visitor with a rate of 15%.
 
@@ -71,7 +71,7 @@ swift test --filter AppleStoreVisitor.Kata/testSalesTaxVisitorWith15Percent
 
 ### Task 3
 
-- Test method: `testAsyncStockCheckVisitor()`
+Test method: `testAsyncStockCheckVisitor()`
 
 - The test should verify that the stock check visitor for `MacBookProProduct` and `VisionProProduct` both return a `Result` type with the success type being `false`.
 
