@@ -4,9 +4,9 @@ import Testing
 
 extension Kata {
     @Test func testSendMail() async {
-        let mailResult = await NotificationFacade.sendMail(text: "Notification test")
+        let result = await NotificationFacade.sendMail(text: "Notification test")
 
-        switch mailResult {
+        switch result {
         case .success(let response):
             #expect(response.notificationType == .mail)
             #expect(response.message == "Notification sent")
@@ -16,9 +16,9 @@ extension Kata {
     }
 
     @Test func testSendMessage() async {
-        let messageResult = await NotificationFacade.sendMessage(text: "Notification test")
+        let result = await NotificationFacade.sendMessage(text: "Notification test")
 
-        switch messageResult {
+        switch result {
         case .success(let response):
             #expect(response.notificationType == .message)
             #expect(response.message == "Notification sent")
@@ -28,9 +28,9 @@ extension Kata {
     }
 
     @Test func testSendPushNotification() async {
-        let pushResult = await NotificationFacade.sendPushNotification(text: "Notification test")
+        let result = await NotificationFacade.sendPushNotification(text: "Notification test")
 
-        switch pushResult {
+        switch result {
         case .success(let response):
             #expect(response.notificationType == .pushNotification)
             #expect(response.message == "Notification sent")
