@@ -1,3 +1,4 @@
+
 struct Kata {
 
     // Visitor
