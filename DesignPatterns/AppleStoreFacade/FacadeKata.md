@@ -11,9 +11,9 @@ Location of the files:
 
 ## Kata code and tests
 
-Use the `NotificationFacade` class to hide the complexity of sending notifications.
+Use the `NotificationFacade` class to provide a simple interface for sending notifications.
 
-In the article, concurrency features are not used. The kata extends the article by expecting the notifications to be sent concurrently.
+In the article, concurrency features are not used. The kata extends the article by expecting the notifications have the ability to run concurrently.
 
 Files: `Sources/FacadeKataCode.swift` & `Tests/FacadeKataTests.swift`
 
