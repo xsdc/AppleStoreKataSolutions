@@ -11,7 +11,7 @@ protocol AppleWatchConfiguration {
 }
 
 class DefaultAppleWatchConfiguration: AppleWatchConfiguration {
-    var engravingEnabled: Bool = true
+    var engravingIsEnabled: Bool = true
     
     final func process() {
         mapDataForWatchCaseSize()

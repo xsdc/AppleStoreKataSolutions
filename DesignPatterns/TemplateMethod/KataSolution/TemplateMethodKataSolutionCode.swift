@@ -11,12 +11,12 @@ protocol AppleWatchConfiguration {
 }
 
 class DefaultAppleWatchConfiguration: AppleWatchConfiguration {
-    var engravingEnabled: Bool = true
+    var engravingIsEnabled: Bool = true
     
     final func process() {
         mapDataForWatchBand()
         mapDataForWatchBandSize()
-        if engravingEnabled {
+        if engravingIsEnabled {
             mapDataForWatchEngraving()
         }
         mapDataForWatchCaseMaterial()
@@ -123,7 +123,7 @@ class ReverseOrderSeries10AppleWatchConfiguration: ReverseOrderAppleWatchConfigu
 class HermèsSeries10AppleWatchConfiguration: DefaultAppleWatchConfiguration {
     override init() {
         super.init()
-        engravingEnabled = false
+        engravingIsEnabled = false
     }
     
     override func mapDataForWatchCaseSize() {
