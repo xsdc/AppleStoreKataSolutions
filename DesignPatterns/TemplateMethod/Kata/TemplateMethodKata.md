@@ -56,7 +56,7 @@ swift test --filter TemplateMethodKataTests.testTask2
 
 ### Task 3
 
-- The Hermès Series 10 Apple Watch doesn't the option to engrave.
+- The Hermès Series 10 Apple Watch doesn't have the option to add an engraving.
 - Add the ability to skip the engraving step in the `DefaultAppleWatchConfiguration`.
 - Only the `HermèsSeries10AppleWatchConfiguration` should skip the engraving step.
 
