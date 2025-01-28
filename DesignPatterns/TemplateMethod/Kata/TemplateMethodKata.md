@@ -1,4 +1,3 @@
-
 # Template Method Kata
 
 Before attempting the kata, read the article, the article code, and article tests.
