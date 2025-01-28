@@ -8,7 +8,7 @@ Location of the files:
 - `DesignPatterns/Observer/Article/ObserverArticleCode.swift`
 - `DesignPatterns/Observer/Article/ObserverArticleTests.swift`
 
-The tests can either be run via the command line or in Xcode.
+The tests can either be run via Xcode or the command line.
 
 To run them via Xcode:
 - The `DesignPatterns/Observer` package directory can be opened in Xcode with: File -> Open (⌘ + O)
