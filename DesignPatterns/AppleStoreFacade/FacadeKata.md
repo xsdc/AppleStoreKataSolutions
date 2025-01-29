@@ -1,4 +1,3 @@
-
 # Facade Kata
 
 Before attempting the kata, read the article, the code, and tests.
