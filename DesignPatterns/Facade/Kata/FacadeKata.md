@@ -1,20 +1,33 @@
 # Facade Kata
 
-Before attempting the kata, read the article, the code, and tests.
+Before attempting the kata, read the article, code, and tests.
 
 Location of the files:
 
-- `DesignPatterns/AppleStoreFacade/FacadeArticle.md`
-- `DesignPatterns/AppleStoreFacade/Sources/FacadeArticleCode.swift`
-- `DesignPatterns/AppleStoreFacade/Tests/FacadeArticleTests.swift`
+- `DesignPatterns/Facade/Article/FacadeArticle.md`
+- `DesignPatterns/Facade/Article/FacadeArticleCode.swift`
+- `DesignPatterns/Facade/Article/FacadeArticleTests.swift`
 
-## Kata code and tests
+The tests can either be run via Xcode or the command line.
+
+To run them via Xcode:
+- The `DesignPatterns/Facade` package directory can be opened in Xcode with: File -> Open (⌘ + O)
+- Or by running the following command from the root directory: `xed DesignPatterns/Facade`
+
+To run them via the command line:
+- Navigate to the directory: `cd DesignPatterns/Facade`
+- Run the following command: `swift test`
+- To get an overview of the tests, run the following command: `swift test --list-tests`
+
+## Tasks
+
+Files:
+- `DesignPatterns/Facade/Kata/FacadeKataCode.swift`
+- `DesignPatterns/Facade/Kata/FacadeKataTests.swift`
 
 Use the `NotificationFacade` class to provide a simple interface for sending notifications.
 
-In the article, concurrency features are not used. The kata extends the article by expecting the notifications have the ability to run concurrently.
-
-Files: `Sources/FacadeKataCode.swift` & `Tests/FacadeKataTests.swift`
+In the article, concurrency features are not used. The kata extends the article by expecting the notifications to have the ability to run concurrently.
 
 ### Task 1
 
@@ -23,7 +36,7 @@ Files: `Sources/FacadeKataCode.swift` & `Tests/FacadeKataTests.swift`
 - Run the test with:
 
 ```shell
-swift test --filter AppleStoreFacade.Kata/testSendMail
+swift test --filter FacadeKataTests.testTask1
 ```
 
 ### Task 2
@@ -33,7 +46,7 @@ swift test --filter AppleStoreFacade.Kata/testSendMail
 - Run the test with:
 
 ```shell
-swift test --filter AppleStoreFacade.Kata/testSendMessage
+swift test --filter FacadeKataTests.testTask2
 ```
 
 ### Task 3
@@ -43,7 +56,7 @@ swift test --filter AppleStoreFacade.Kata/testSendMessage
 - Run the test with:
 
 ```shell
-swift test --filter AppleStoreFacade.Kata/testSendPush
+swift test --filter FacadeKataTests.testTask3
 ```
 
 ### Task 4
@@ -54,7 +67,7 @@ swift test --filter AppleStoreFacade.Kata/testSendPush
 - Run the test with:
 
 ```shell
-swift test --filter AppleStoreFacade.Kata/testBatchSending
+swift test --filter FacadeKataTests.testTask4
 ```
 
 ## Task 5
@@ -64,7 +77,7 @@ swift test --filter AppleStoreFacade.Kata/testBatchSending
 - Run the test with:
 
 ```shell
-swift test --filter AppleStoreFacade.Kata/testManualBatchSending
+swift test --filter FacadeKataTests.testTask5
 ```
 
 ## Final Check
@@ -72,5 +85,5 @@ swift test --filter AppleStoreFacade.Kata/testManualBatchSending
 Ensure that all tests pass:
 
 ```shell
-swift test --filter AppleStoreFacade.Kata
+swift test --filter FacadeKataTests
 ```
