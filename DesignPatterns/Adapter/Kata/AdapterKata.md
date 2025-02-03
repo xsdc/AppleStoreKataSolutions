@@ -1,6 +1,6 @@
 # Adapter Kata
 
-Before attempting the kata, read the article, the code, and tests.
+Before attempting the kata, read the article, code, and tests.
 
 Location of the files:
 
@@ -8,9 +8,22 @@ Location of the files:
 - `DesignPatterns/AppleStoreAdapter/Sources/AdapterArticleCode.swift`
 - `DesignPatterns/AppleStoreAdapter/Tests/AdapterArticleTests.swift`
 
-## Kata code
+The tests can either be run via Xcode or the command line.
 
-File: `Sources/AdapterKataCode.swift`
+To run them via Xcode:
+- The `DesignPatterns/Adapter` package directory can be opened in Xcode with: File -> Open (⌘ + O)
+- Or open the package by running the following command from the root directory: `xed DesignPatterns/Adapter`
+
+To run them via the command line:
+- Navigate to the directory: `cd DesignPatterns/Adapter`
+- Run the following command: `swift test`
+- To get an overview of the tests, run the following command: `swift test --list-tests`
+
+## Kata
+
+Files:
+- `DesignPatterns/Adapter/Kata/AdapterKataCode.swift`
+- `DesignPatterns/Adapter/Kata/AdapterKataTests.swift`
 
 ### Task 1
 
