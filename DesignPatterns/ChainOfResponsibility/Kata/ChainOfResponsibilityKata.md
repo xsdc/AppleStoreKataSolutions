@@ -1,6 +1,6 @@
 # Chain of Responsibility Kata
 
-Before attempting the kata, read the article, the article code, and article tests.
+Before attempting the kata, read the article, code, and tests.
 
 Location of the files:
 
@@ -19,7 +19,7 @@ To run them via the command line:
 - Run the following command: `swift test`
 - To get an overview of the tests, run the following command: `swift test --list-tests`
 
-## Kata
+## Tasks
 
 Files:
 - `DesignPatterns/ChainOfResponsibility/Kata/ChainOfResponsibilityKataCode.swift`
