@@ -32,7 +32,7 @@ Complete the implementation of the new recommendation engine adapter: `Popularit
 Run the test with:
 
 ```shell
-swift test --filter AppleStoreAdapter.Kata/testPopularityBasedRecommendationEngineAdapter
+swift test --filter AdapterKataTests.testTask1
 ```
 
 ### Task 2
@@ -42,7 +42,7 @@ Complete the implementation of the `dateIntroduced` property for the `Product` s
 Run the test with:
 
 ```shell
-swift test --filter AppleStoreAdapter.Kata/testMachineLearningRecommendationEngineAdapter
+swift test --filter AdapterKataTests.testTask2
 ```
 
 ### Task 3
@@ -52,7 +52,7 @@ Complete the implementation of the `dateIntroduced` property for the `Product` s
 Run the test with:
 
 ```shell
-swift test --filter AppleStoreAdapter.Kata/testHistoryRecommendationEngineAdapter
+swift test --filter AdapterKataTests.testTask3
 ```
 
 ## Final Check
@@ -60,5 +60,5 @@ swift test --filter AppleStoreAdapter.Kata/testHistoryRecommendationEngineAdapte
 Ensure that all tests pass:
 
 ```shell
-swift test --filter AppleStoreAdapter.Kata
+swift test --filter AdapterKataTests
 ```

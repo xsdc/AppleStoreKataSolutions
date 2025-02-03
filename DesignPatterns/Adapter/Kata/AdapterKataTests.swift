@@ -49,7 +49,7 @@ struct Stub {
     ]
 }
 
-@Test func testPopularityBasedRecommendationEngineAdapter() {
+@Test func testTask1() {
     let adapter = PopularityBasedRecommendationEngineAdapter(products: Stub.popularityBasedServiceProducts)
     let recommendationEngine = RecommendationEngine(adapter: adapter)
     let products = recommendationEngine.fetchProductRecommendations()
@@ -65,7 +65,7 @@ struct Stub {
     #expect(products[1].dateIntroduced == DateStub.visionPro)
 }
 
-@Test func testMachineLearningRecommendationEngineAdapter() {
+@Test func testTask2() {
     let adapter = MachineLearningRecommendationEngineAdapter(products: Stub.machineLearningServiceProducts)
     let recommendationEngine = RecommendationEngine(adapter: adapter)
     let products = recommendationEngine.fetchProductRecommendations()
@@ -81,7 +81,7 @@ struct Stub {
     #expect(products[1].dateIntroduced == DateStub.visionPro)
 }
 
-@Test func testHistoryRecommendationEngineAdapter() {
+@Test func testTask3() {
     let adapter = HistoryRecommendationEngineAdapter(products: Stub.historyServiceProducts)
     let recommendationEngine = RecommendationEngine(adapter: adapter)
     let products = recommendationEngine.fetchProductRecommendations()
