@@ -1,27 +1,25 @@
 
-struct Article {
-    struct ConfigurationOption {
-        let name: String
-        let price: Double
-    }
-    
-    // Prototype
-    
-    protocol CloneableProductConfiguration {
-        func cloneWithConversionRate(of conversionRate: Double) -> Self
-    }
-    
-    // Concrete Prototype
-    
-    struct iPhoneProductConfiguration: CloneableProductConfiguration {
-        let storageOptions: [ConfigurationOption]
+struct ConfigurationOption {
+    let name: String
+    let price: Double
+}
 
-        func cloneWithConversionRate(of conversionRate: Double) -> iPhoneProductConfiguration {
-            let storageOptions = self.storageOptions.map { option in
-                ConfigurationOption(name: option.name, price: option.price * conversionRate)
-            }
+// Prototype
 
-            return iPhoneProductConfiguration(storageOptions: storageOptions)
+protocol CloneableProductConfiguration {
+    func cloneWithConversionRate(of conversionRate: Double) -> Self
+}
+
+// Concrete Prototype
+
+struct iPhoneProductConfiguration: CloneableProductConfiguration {
+    let storageOptions: [ConfigurationOption]
+
+    func cloneWithConversionRate(of conversionRate: Double) -> iPhoneProductConfiguration {
+        let storageOptions = self.storageOptions.map { option in
+            ConfigurationOption(name: option.name, price: option.price * conversionRate)
         }
+
+        return iPhoneProductConfiguration(storageOptions: storageOptions)
     }
 }
