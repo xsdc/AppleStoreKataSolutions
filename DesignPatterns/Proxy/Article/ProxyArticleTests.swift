@@ -8,7 +8,7 @@ import Testing
     let bagWithAnalyticsProxy = BagWithAnalyticsProxy(bag: bag, logger: logger)
 
     bagWithAnalyticsProxy.addProduct(
-        Mocks.product()
+        Stub.product()
     )
 
     #expect(logger.eventsLogged.contains("productAddedToBag"))
@@ -24,7 +24,7 @@ import Testing
     #expect(logger.eventsLogged.contains("allProductsRemovedFromBag"))
 }
 
-struct Mocks {
+struct Stub {
     static func product() -> Product {
         Product(name: "iPhone", price: 999.99)
     }

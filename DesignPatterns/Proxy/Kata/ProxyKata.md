@@ -19,7 +19,7 @@ To run them via the command line:
 - Run the following command: `swift test`
 - To get an overview of the tests, run the following command: `swift test --list-tests`
 
-## Kata
+## Tasks
 
 Files:
 - `DesignPatterns/Proxy/Kata/ProxyKataCode.swift`
