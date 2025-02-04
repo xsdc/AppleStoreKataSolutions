@@ -7,7 +7,7 @@ import Testing
     let addToBagHandler = AddToBagHandler(next: loggingHandler)
     let stockCheckHandler = StockCheckHandler(next: addToBagHandler)
 
-    let request = Mocks.request()
+    let request = Stub.request()
     stockCheckHandler.handle(request: request) { result in
         #expect(request.log.count == 3)
         #expect(request.log[0] == "Product 1234 is in stock")
@@ -17,7 +17,7 @@ import Testing
     }
 }
 
-struct Mocks {
+struct Stub {
     static func request() -> Request {
         return Request(productId: "1234")
     }

@@ -7,7 +7,7 @@ import Testing
     let addToBagHandler = AddToBagHandler(next: loggingHandler)
     let stockCheckHandler = StockCheckHandler(next: addToBagHandler)
 
-    let request = Mocks.request()
+    let request = Stub.request()
     let response = await stockCheckHandler.handle(request: request)
 
     #expect(response.success == true)
@@ -27,7 +27,7 @@ import Testing
     let loggingHandler = LoggingHandler(next: nil)
     let addToBagHandler = AddToBagHandler(next: loggingHandler)
 
-    let request = Mocks.request()
+    let request = Stub.request()
     let response = await addToBagHandler.handle(request: request)
 
     #expect(response.success == true)
@@ -45,7 +45,7 @@ import Testing
     let addToBagHandler = AddToBagHandler(next: loggingHandler)
     let inStoreStockCheckHandler = InStoreStockCheckHandler(next: addToBagHandler, storeId: "SF")
 
-    let request = Mocks.request()
+    let request = Stub.request()
     let response = await inStoreStockCheckHandler.handle(request: request)
 
     #expect(response.success == true)
@@ -61,15 +61,15 @@ import Testing
     #expect(request.responses[2].message == "Logging analytics event for product 1234")
 }
 
-struct Mocks {
+struct Stub {
     static func request() -> Request {
         return Request(productId: "1234")
     }
 
     class TempHandler {
-        private(set) var next: Mocks.TempHandler?
+        private(set) var next: Stub.TempHandler?
 
-        init(next: Mocks.TempHandler?) {
+        init(next: Stub.TempHandler?) {
             self.next = next
         }
 
