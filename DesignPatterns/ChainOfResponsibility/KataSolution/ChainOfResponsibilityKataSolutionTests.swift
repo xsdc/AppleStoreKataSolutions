@@ -74,7 +74,7 @@ struct Stub {
         }
 
         func handle(request: Request) async -> HandlerResponse {
-            let response = HandlerResponse(success: false, message: "Mock")
+            let response = HandlerResponse(success: false, message: "Stub")
             request.responses.append(response)
 
             return await next?.handle(request: request) ?? response
