@@ -1,6 +1,6 @@
 # Proxy Kata
 
-Before attempting the kata, read the article, the article code, and article tests.
+Before attempting the kata, read the article, code, and tests.
 
 Location of the files:
 
