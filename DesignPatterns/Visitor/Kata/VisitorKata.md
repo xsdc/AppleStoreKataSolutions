@@ -1,17 +1,28 @@
 
 # Visitor Kata
 
-Before attempting the kata, read the article, the code, and tests.
+Before attempting the kata, read the article, code, and tests.
 
 Location of the files:
 
-- `DesignPatterns/AppleStoreVisitor/VisitorArticle.md`
-- `DesignPatterns/AppleStoreVisitor/Sources/VisitorArticleCode.swift`
-- `DesignPatterns/AppleStoreVisitor/Tests/VisitorArticleTests.swift`
+- `DesignPatterns/Visitor/Article/VisitorArticle.md`
+- `DesignPatterns/Visitor/Article/VisitorArticleCode.swift`
+- `DesignPatterns/Visitor/Article/VisitorArticleTests.swift`
+
+The tests can either be run via Xcode or the command line.
+
+To run them via Xcode:
+- The `DesignPatterns/Visitor` package directory can be opened in Xcode with: File -> Open (⌘ + O)
+- Or open the package by running the following command from the root directory: `xed DesignPatterns/Visitor`
+
+To run them via the command line:
+- Navigate to the directory: `cd DesignPatterns/Visitor`
+- Run the following command: `swift test`
+- To get an overview of the tests, run the following command: `swift test --list-tests`
 
 ## Kata code
 
-File: `Sources/VisitorKataCode.swift`
+Files: `DesignPatterns/Visitor/Kata/VisitorKataCode.swift`
 
 ### Task 1
 
@@ -39,7 +50,7 @@ In addition to the `Visitor` protocol, an async version has been defined: `Async
 
 ## Kata tests
 
-File: `Tests/VisitorKataTests.swift`
+Files: `DesignPatterns/Visitor/Kata/VisitorKataTests.swift`
 
 ### Task 1
 
@@ -49,10 +60,10 @@ Test method: `testSalesTaxVisitorWith10Percent()`
 
 - The test should verify the sales tax visitor for `MacBookProProduct` and `VisionProProduct`.
 
-- Run the test with:
+Run the test via the command line with:
 
 ```shell
-swift test --filter AppleStoreVisitor.Kata/testSalesTaxVisitorWith10Percent
+swift test --filter VisitorKataTests.testTask1
 ```
 
 ### Task 2
@@ -63,10 +74,10 @@ Test method: `testSalesTaxVisitorWith15Percent()`
 
 - The test should verify the sales tax visitor for `MacBookProProduct` and `VisionProProduct`.
 
-- Run the test with:
+Run the test via the command line with:
 
 ```shell
-swift test --filter AppleStoreVisitor.Kata/testSalesTaxVisitorWith15Percent
+swift test --filter VisitorKataTests.testTask2
 ```
 
 ### Task 3
@@ -75,10 +86,10 @@ Test method: `testAsyncStockCheckVisitor()`
 
 - The test should verify that the stock check visitor for `MacBookProProduct` and `VisionProProduct` both return a `Result` type with the success type being `false`.
 
-- Run the test with:
+Run the test via the command line with:
 
 ```shell
-swift test --filter AppleStoreVisitor.Kata/testAsyncStockCheckVisitor
+swift test --filter VisitorKataTests.testTask3
 ```
 
 ## Final Check
@@ -86,5 +97,5 @@ swift test --filter AppleStoreVisitor.Kata/testAsyncStockCheckVisitor
 Ensure that all tests pass:
 
 ```shell
-swift test --filter AppleStoreVisitor.Kata
+swift test --filter VisitorKataTests
 ```

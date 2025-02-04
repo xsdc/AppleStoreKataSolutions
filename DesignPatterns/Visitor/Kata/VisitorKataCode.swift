@@ -1,88 +1,85 @@
 
-struct Kata {
+// Visitor
 
-    // Visitor
+protocol Visitor {
+    associatedtype VisitorResult
+    func visit(_ product: Product) -> VisitorResult
+}
 
-    protocol Visitor {
-        associatedtype VisitorResult
-        func visit(_ product: Product) -> VisitorResult
+// Concrete Visitor
+
+class SalesTaxVisitor {
+    // Kata
+}
+
+class EducationDiscountVisitor: Visitor {
+    typealias VisitorResult = Double
+    private let discountPercentage = 0.25
+
+    func visit(_ product: Product) -> Double {
+        product.price * discountPercentage
+    }
+}
+
+class EmployeeDiscountVisitor: Visitor {
+    typealias VistorResult = Double
+    private let discountPercentage = 0.5
+
+    func visit(_ product: Product) -> Double {
+        product.price * discountPercentage
+    }
+}
+
+class DescriptionVisitor: Visitor {
+    typealias VisitorResult = String
+
+    func visit(_ product: Product) -> String {
+        "Product with ID \(product.id) costs $\(product.price)"
+    }
+}
+
+// Element
+
+protocol Product {
+    var id: String { get }
+    var price: Double { get }
+}
+
+protocol VisitorAccepting {
+    func accept<V: Visitor>(_ visitor: V) -> V.VisitorResult
+}
+
+protocol AsyncVisitorAccepting {
+    associatedtype VisitorResult
+    func visit(_ product: Product) async -> VisitorResult
+}
+
+// Concrete Element
+
+struct MacBookProProduct: Product, VisitorAccepting {
+    let id: String
+    let price: Double
+
+    init(id: String, price: Double) {
+        self.id = id
+        self.price = price
     }
 
-    // Concrete Visitor
+    func accept<V: Visitor>(_ visitor: V) -> V.VisitorResult {
+        visitor.visit(self)
+    }
+}
 
-    class SalesTaxVisitor {
-        // Kata
+struct VisionProProduct: Product, VisitorAccepting {
+    let id: String
+    let price: Double
+
+    init(id: String, price: Double) {
+        self.id = id
+        self.price = price
     }
 
-    class EducationDiscountVisitor: Visitor {
-        typealias VisitorResult = Double
-        private let discountPercentage = 0.25
-
-        func visit(_ product: Product) -> Double {
-            product.price * discountPercentage
-        }
-    }
-
-    class EmployeeDiscountVisitor: Visitor {
-        typealias VistorResult = Double
-        private let discountPercentage = 0.5
-
-        func visit(_ product: Product) -> Double {
-            product.price * discountPercentage
-        }
-    }
-
-    class DescriptionVisitor: Visitor {
-        typealias VisitorResult = String
-
-        func visit(_ product: Product) -> String {
-            "Product with ID \(product.id) costs $\(product.price)"
-        }
-    }
-
-    // Element
-
-    protocol Product {
-        var id: String { get }
-        var price: Double { get }
-    }
-
-    protocol VisitorAccepting {
-        func accept<V: Visitor>(_ visitor: V) -> V.VisitorResult
-    }
-    
-    protocol AsyncVisitorAccepting {
-        associatedtype VisitorResult
-        func visit(_ product: Product) async -> VisitorResult
-    }
-
-    // Concrete Element
-
-    struct MacBookProProduct: Product, VisitorAccepting {
-        let id: String
-        let price: Double
-
-        init(id: String, price: Double) {
-            self.id = id
-            self.price = price
-        }
-
-        func accept<V: Visitor>(_ visitor: V) -> V.VisitorResult {
-            visitor.visit(self)
-        }
-    }
-
-    struct VisionProProduct: Product, VisitorAccepting {
-        let id: String
-        let price: Double
-
-        init(id: String, price: Double) {
-            self.id = id
-            self.price = price
-        }
-
-        func accept<V: Visitor>(_ visitor: V) -> V.VisitorResult {
-            visitor.visit(self)
-        }
+    func accept<V: Visitor>(_ visitor: V) -> V.VisitorResult {
+        visitor.visit(self)
     }
 }

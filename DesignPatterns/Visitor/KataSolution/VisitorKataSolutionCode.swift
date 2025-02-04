@@ -6,6 +6,11 @@ protocol Visitor {
     func visit(_ product: Product) -> VisitorResult
 }
 
+protocol AsyncVisitor {
+    associatedtype VisitorResult
+    func visit(_ product: Product) async -> VisitorResult
+}
+
 // Concrete Visitor
 
 class EducationDiscountVisitor: Visitor {
@@ -34,6 +39,32 @@ class DescriptionVisitor: Visitor {
     }
 }
 
+class SalesTaxVisitor: Visitor {
+    typealias VisitorResult = Double
+    private var salesTax: Double
+
+    init(salesTax: Double) {
+        self.salesTax = salesTax
+    }
+
+    func visit(_ product: Product) -> Double {
+        product.price * salesTax
+    }
+}
+
+class StockCheckVisitor: AsyncVisitor {
+    typealias VisitorResult = Result<Bool, Error>
+    private let storeCode: String
+    
+    init(storeCode: String) {
+        self.storeCode = storeCode
+    }
+    
+    func visit(_ product: Product) async -> Result<Bool, Error> {
+        return .success(false)
+    }
+}
+
 // Element
 
 protocol Product {
@@ -43,6 +74,7 @@ protocol Product {
 
 protocol VisitorAccepting {
     func accept<V: Visitor>(_ visitor: V) -> V.VisitorResult
+    func accept<V: AsyncVisitor>(_ visitor: V) async -> V.VisitorResult
 }
 
 // Concrete Element
@@ -59,6 +91,10 @@ struct MacBookProProduct: Product, VisitorAccepting {
     func accept<V: Visitor>(_ visitor: V) -> V.VisitorResult {
         visitor.visit(self)
     }
+    
+    func accept<V: AsyncVisitor>(_ visitor: V) async -> V.VisitorResult {
+        await visitor.visit(self)
+    }
 }
 
 struct VisionProProduct: Product, VisitorAccepting {
@@ -72,5 +108,9 @@ struct VisionProProduct: Product, VisitorAccepting {
 
     func accept<V: Visitor>(_ visitor: V) -> V.VisitorResult {
         visitor.visit(self)
+    }
+    
+    func accept<V: AsyncVisitor>(_ visitor: V) async -> V.VisitorResult {
+        await visitor.visit(self)
     }
 }
