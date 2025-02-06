@@ -1,0 +1,54 @@
+
+// Strategy
+
+protocol NewPaymentStrategy {
+    func pay(amount: Double) async -> Result<String, Error>?
+}
+
+protocol LegacyPaymentStrategy {
+    func payWithAmount(_ amount: Double) async -> Result<String, Error>?
+}
+
+// Concrete Strategy
+
+struct ApplePayPaymentStrategy: LegacyPaymentStrategy {
+    let appleId: String
+
+    func payWithAmount(_ amount: Double) async -> Result<String, Error>? {
+        return .success("Payment processed with Apple Pay for \(amount)")
+    }
+}
+
+struct CreditCardPaymentStrategy: LegacyPaymentStrategy {
+    let creditCardNumber: String
+
+    func payWithAmount(_ amount: Double) async -> Result<String, Error>? {
+        return .success("Payment processed with credit card for \(amount)")
+    }
+}
+
+struct GiftCardPaymentStrategy: NewPaymentStrategy {
+    let id: String
+
+    func pay(amount: Double) async -> Result<String, Error>? {
+        return .success("Payment processed with gift card for \(amount)")
+    }
+}
+
+// Context
+
+struct NewCheckout {
+    let paymentStrategy: NewPaymentStrategy?
+
+    func processPayment(amount: Double) async -> Result<String, Error>? {
+        return await paymentStrategy?.pay(amount: amount)
+    }
+}
+
+struct LegacyCheckout {
+    let paymentStrategy: LegacyPaymentStrategy?
+
+    func processPayment(amount: Double) async -> Result<String, Error>? {
+        return await paymentStrategy?.payWithAmount(amount)
+    }
+}
