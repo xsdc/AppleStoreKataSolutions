@@ -27,7 +27,7 @@ Files:
 
 ### Task 1
 
-Implement the `AnalyticsIdentifiable` for categories. Return the category id.
+Implement the `AnalyticsIdentifiable` for categories. Return only the `id`.
 
 Run the test via the command line with:
 
@@ -41,7 +41,7 @@ swift test --filter CompositeKataTests.testTask1
 
 - Return the product `id`, and append a dash, and then the parent category `id`.
 
-- Only return the product `id` if the category is nil.
+- Only return the product `id` if the parent category is `nil`.
 
 Run the test via the command line with:
 
