@@ -144,24 +144,29 @@ protocol BentoBoxViewable {
 
 class MacComponentFactory: AbstractComponentFactory {
     func makeCardStackView() -> CardStackViewable? {
+        // Task 2
         return nil
     }
     
     func makeCarouselView() -> CarouselViewable {
+        // Task 1
         return iPadCarouselView()
     }
 
     func makeBentoBoxView() -> BentoBoxViewable {
+        // Task 1
         return iPadBentoBoxView(type: .small)
     }
 }
 
 class iPhoneComponentFactory: AbstractComponentFactory {
     func makeCardStackView() -> CardStackViewable? {
+        // Task 2
         return nil
     }
     
     func makeCarouselView() -> CarouselViewable {
+        // Task 2
         return iPhoneCarouselView()
     }
 
@@ -172,6 +177,7 @@ class iPhoneComponentFactory: AbstractComponentFactory {
 
 class iPadComponentFactory: AbstractComponentFactory {
     func makeCardStackView() -> CardStackViewable? {
+        // Task 2
         return nil
     }
     

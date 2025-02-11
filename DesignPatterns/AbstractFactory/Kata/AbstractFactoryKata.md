@@ -27,7 +27,9 @@ Files:
 
 ### Task 1
 
+- A new concrete product, `MacComponentFactory`, has been added.
 
+- Ensure that when a product view is built using the MacComponentFactory, it correctly uses Mac specific views.
 
 ```shell
 swift test --filter AbstractFactoryKataTests.testTask1
@@ -35,7 +37,11 @@ swift test --filter AbstractFactoryKataTests.testTask1
 
 ### Task 2
 
+- Add support for producing the new `CardStackView` components in each concrete component factory.
 
+- The card stack type should be horizontal for Mac and iPad, and vertical for iPhone.
+
+- The adaptive type can be removed.
 
 Run the test via the command line with:
 
