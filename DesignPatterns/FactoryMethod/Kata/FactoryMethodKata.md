@@ -25,32 +25,18 @@ Files:
 - `DesignPatterns/FactoryMethod/Kata/FactoryMethodKataCode.swift`
 - `DesignPatterns/FactoryMethod/Kata/FactoryMethodKataTests.swift`
 
-### Task 1
+### Task
 
+- Add a new shipping method for drone delivery.
 
+- The title should be "Drone Shipping"
+
+- The delivery estimate: "Same day"
+
+- The shipping cost should return 0.
 
 ```shell
 swift test --filter FactoryMethodKataTests.testTask1
-```
-
-### Task 2
-
-
-
-Run the test via the command line with:
-
-```shell
-swift test --filter FactoryMethodKataTests.testTask2
-```
-
-### Task 3
-
-
-
-Run the test via the command line with:
-
-```shell
-swift test --filter FactoryMethodKataTests.testTask3
 ```
 
 ## Final Check
