@@ -27,7 +27,9 @@ Files:
 
 ### Task 1
 
+- Complete the implementation of the engraving property for the Apple Watch Series 10.
 
+- Ensure that the default value is `"None"`.
 
 ```shell
 swift test --filter BuilderKataTests.testTask1
@@ -35,7 +37,13 @@ swift test --filter BuilderKataTests.testTask1
 
 ### Task 2
 
+- Implement the default builder values for the new Apple Watch Ultra series:
+    - Size: 49mm
+    - Material: Natural titanium
+    - Band: Trail loop
+    - Engraving: None
 
+- Make use of the enums cases to set the values.
 
 Run the test via the command line with:
 
@@ -45,7 +53,7 @@ swift test --filter BuilderKataTests.testTask2
 
 ### Task 3
 
-
+Complete the implementation of the Apple Watch Ultra series property builder methods.
 
 Run the test via the command line with:
 
